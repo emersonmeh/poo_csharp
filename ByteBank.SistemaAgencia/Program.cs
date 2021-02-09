@@ -9,7 +9,16 @@ namespace ByteBank.SistemaAgencia
         {
             ContaCorrente conta = new ContaCorrente(846, 234567);
 
-            Console.WriteLine(conta.Numero);
+            string url = "https://bytebank.com.br/cambio?moedaOrigen=Real&moedaDestino=Dolar&valor=1500";
+            string nomeArgumento = "valor";
+
+            ExtratorValorArgumentosUrl argumento = new ExtratorValorArgumentosUrl(url);
+
+            Console.WriteLine(argumento.Url);
+
+            Console.WriteLine("Valor do Argumento: " + argumento.GetValor(nomeArgumento));
+
+            //Console.WriteLine(conta.Numero);
 
             Console.ReadLine();
         }

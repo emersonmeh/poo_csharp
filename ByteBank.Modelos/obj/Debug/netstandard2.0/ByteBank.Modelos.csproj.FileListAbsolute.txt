@@ -4,6 +4,7 @@ C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.Modelos\bin\Debug\netstand
 C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.Modelos\obj\Debug\netstandard2.0\ByteBank.Modelos.csprojAssemblyReference.cache
 C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.Modelos\obj\Debug\netstandard2.0\ByteBank.Modelos.AssemblyInfoInputs.cache
 C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.Modelos\obj\Debug\netstandard2.0\ByteBank.Modelos.AssemblyInfo.cs
-C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.Modelos\obj\Debug\netstandard2.0\ByteBank.Modelos.csproj.CoreCompileInputs.cache
 C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.Modelos\obj\Debug\netstandard2.0\ByteBank.Modelos.dll
 C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.Modelos\obj\Debug\netstandard2.0\ByteBank.Modelos.pdb
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.Modelos\bin\Debug\netstandard2.0\ByteBank.Modelos.xml
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.Modelos\obj\Debug\netstandard2.0\ByteBank.Modelos.csproj.CoreCompileInputs.cache

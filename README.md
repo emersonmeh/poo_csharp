@@ -195,3 +195,24 @@
 	ficaram marcados com uma mensagem de erro, porém, isso não impede a compilação e funcionamento do projeto.
 	Também é possível documentar Exceções que serão lançadas em caso de algum erro. Para exceções utilizar a tag <exception cref="Nome_Exceção">.
 	Para fazer referência ao parametro que esta sendo utilizado em métodos, utilizar a tag <paramref name="nome_parametro" />
+
+	Para representar datas usa-se a Classe DATETIME() nativo do C#.
+		Ex.: DateTime data = new DateTime();
+
+	Para efetuar calculo com datas é necessário utilizar a Classe TIMESPAN(). NÃO é possível efetuar calculo de Datas utilizando a
+	classe DateTime().
+		Ex.: TimeSpan calculoData = data1 - data2;
+
+	Para fácil tratamento dos calculos com Datas utilizar a bibliota HUMANIZER encontrada no NuGets;
+
+
+	*** PARTE 06 - Strings, Expressões Regulares e a classe Object
+
+	Manipulação de Strings:
+		.string.Substring("index"); -> Substring é inclusivo, vai retornar a string a partir do index passado no paramentro
+	incluindo o caractere contido no valor do index;
+	
+	Método INDEXOF() server para obter o index de uma string ou char;
+
+	Método REMOVE() remove parte da string a partir de um valor de index;
+
