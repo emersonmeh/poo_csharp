@@ -1,0 +1,16 @@
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\bin\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.exe
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\bin\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.deps.json
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\bin\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.runtimeconfig.json
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\bin\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.runtimeconfig.dev.json
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\bin\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.dll
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\bin\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.pdb
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\bin\Debug\netcoreapp3.1\ByteBank.Modelos.dll
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\bin\Debug\netcoreapp3.1\ByteBank.Modelos.pdb
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\obj\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.csprojAssemblyReference.cache
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\obj\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.AssemblyInfoInputs.cache
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\obj\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.AssemblyInfo.cs
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\obj\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.csproj.CoreCompileInputs.cache
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\obj\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.csproj.CopyComplete
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\obj\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.dll
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\obj\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.pdb
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBank.SistemaAgencia\obj\Debug\netcoreapp3.1\ByteBank.SistemaAgencia.genruntimeconfig.cache
