@@ -4,43 +4,26 @@ using System.Text;
 
 namespace ByteBankImportacaoExportacao
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
             var enderecoDoArquivo = "contas.txt";
 
-            var fluxoDoArquivo = new FileStream(enderecoDoArquivo, FileMode.Open);
-
-            // Espaço para armazenamento dos bytes do arquivo que vai ser lido;
-            var buffer = new byte[1024]; // 1 kb
-            var numeroBytesLidos = -1;
-
-            while(numeroBytesLidos != 0)
+            // Blocos aninhados de using, no bloco externo não é necessária a abertura das chaves { } e nem a identação
+            using(var fluxoDoArquivo = new FileStream(enderecoDoArquivo, FileMode.Open))
+            using (var leitor = new StreamReader(fluxoDoArquivo))
             {
-                numeroBytesLidos = fluxoDoArquivo.Read(buffer, 0, 1024);
-                EscreverBuffer(buffer);
-            } 
+                while (!leitor.EndOfStream)
+                {
+                    var linha = leitor.Read();
+                    Console.WriteLine(linha);
+                }
+            }
 
             Console.ReadLine();
         }
 
-        static void EscreverBuffer(byte[] buffer)
-        {
-
-            // Decoding dos bytes em texto
-            //var a = new UTF8Encoding(); //codificação explícita
-            var a = Encoding.Default; //codificação da máquina que esta rodando o programa
-            var texto = a.GetString(buffer);
-
-            Console.Write(texto);
-
-            // Escreve os bytes do arquivo carregado no buffer
-            //foreach(var meuByte in buffer)
-            //{
-            //    Console.Write(meuByte);
-            //    Console.Write(" ");
-            //}
-        }
+        
     }
 }

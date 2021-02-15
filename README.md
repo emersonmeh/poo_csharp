@@ -364,3 +364,49 @@
 	uma máquina Windows, é possível utilizar uma propriedade estática da Classe ENCODING() para decodificar sem ter que
 	explicitamente informar qual o tipo de codificação que foi utilizado.
 		Ex.: var a = Encoding.Default;
+
+	FILESTREAM.Close() -> Método que libera o arquivo para outros usos.
+
+	Para que não seja necessária a utilização do método Close toda vez que formos trabalhar com IO podemos utilizar a 
+	diretiva USING(), já que, a Classe FileStream em sua composição herda da interface IDisposable() que fica responsável
+	por chamar implicitamente o método Close.
+		Ex.: 
+			using (var fluxoDoArquivo = new FileStream(enderecoDoArquivo, FileMode.Open))
+			{
+				// implementação
+			}
+
+	É possível dividir os arquivos de uma mesma Classe em arquivos diferentes, que serão lidos pelo compilador como um
+	arquivo único. Para isso basta antes da palavra reserva class utilizar o modificador PARTIAL;
+		Ex.: partial class Program {}
+
+	Para trabalhar com Stream de forma mais simples, sem ter que se preocupar tanto com Encoding/Decoding e tamanho do Buffer
+	utiliza-se a Classe StreamReader() em conjunto com a Classe FileStream. A Classe StreamReader possui diversos
+	métodos para leitura e conversão de bytes em texto.
+		Ex.:
+			using(var fluxoDoArquivo = new FileStream(enderecoDoArquivo, FileMode.Open))
+            {
+                var leitor = new StreamReader(fluxoDoArquivo);
+
+				// Lê somente uma linha do arquivo
+                var linha = leitor.ReadLine();
+
+				// Lê todas as linhas de um arquivo (CUIDADO, pois se o arquivo for muito grande pode ocorrer um Overflow de memória)
+				var linha2 = leitor.ReadToEnd();
+
+                Console.WriteLine(linha);
+            }
+
+	Para percorrer todo o arquivo sem que tenha que carregar tudo de uma vez em memória utilizando o método ReadToEnd(), utiliza
+	um laço While com o verificador que indica quando o arquivo foi percorrido até o final.
+		Ex.:
+			using (var leitor = new StreamReader(fluxoDoArquivo))
+            {
+				// EndOfStream indica a última linha do arquivo
+                while (!leitor.EndOfStream)
+                {
+                    var linha = leitor.Read();
+                    Console.WriteLine(linha);
+                }
+            }
+
