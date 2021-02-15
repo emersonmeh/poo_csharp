@@ -1,4 +1,4 @@
-	OOP com C# - Parte 2
+	### OOP com C# - Parte 2 ###
 
 	Métodos/Propriedades publicos (PUBLIC) são visíveis em toda a solution do projeto, podendo ser utilizados em 
 	diversas partes do código.
@@ -216,3 +216,42 @@
 
 	Método REMOVE() remove parte da string a partir de um valor de index;
 
+	Para trabalhar com EXPRESSÕES REGULARES no C#, utilizar a Classe REGEX();
+		Regex.IsMatch(); -> verifica um padrão em texto e retorna true/false;
+		Regex.Match(); -> verifica um padrão e retorna um objeto com o resultado da busca. O retorno é um objeto do tipo Match e
+		dentro dele é possível obter o Value.
+
+		[0-9][a-Z][a-z] -> os valores entre colchetes são padrões de intervalo;
+		{4}{10}{2} -> os valores entre chaves são quantificadores, ou seja, representa a quantidade de vezes que um padrão 
+	irá se repetir;
+		{0,1}{3,5} -> quantificadores podem conter intervalos com valores separados por vírgula;
+		? -> quando quantificadores possuem intervalos de {0,1} é possível simplificar utilizando o caractere ? ;
+
+		Ex.: string padrao = "[0-9]{4,5}-?[0-9]{4}" -> Regex para numeros de telefone 98762-9898 ou 2121-8765
+
+
+	Classe OBJECT -> toda Classe dentro dentro do .NET/C# deriva (implícitamente) do tipo OBJECT;
+
+
+	É possível executar CONVERSÃO EXPLÍCITA de Classes quando for necessário converter uma Classe de nível mais baixo
+	em uma Classes de nível mais alto, para isso é necessário utilizar os parênteses (CAST).
+		Ex.: 
+			public override bool Equals(object obj)
+			{
+				Cliente novoCliente = (Cliente)obj; //** Conversão explícita de obj em Cliente
+			}
+
+	A conversão utilizando (Cliente)obj espera que o objeto recebido seja do tipo Cliente, caso contrário uma Exception vai ser 
+	exibida informando que o tipo de referência não é compatível.
+	É possível fazer o CAST de outra forma, sem que uma Exception seja lançada quando um tipo direferente for recebido. Para isso
+	utiliza a palavra reservada AS que indica o tipo do objeto que espera receber, caso seja de um tipo diferente, a conversão
+	irá retornar NULL;
+		Ex.: 
+			public override bool Equals(object obj)
+			{
+				Cliente novoCliente = obj as Cliente; // retorna NULL caso obj seja de tipo diferente
+			}
+	Com essa abordagem é possível fazer a verificação da variável novoCliente antes de prosseguir na execução do código.
+
+	
+	*** List, Lambda e LINQ
