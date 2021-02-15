@@ -1,5 +1,7 @@
 ﻿using ByteBank.Modelos;
+using ByteBank.SistemaAgencia.Extensoes;
 using System;
+using System.Collections.Generic;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -7,16 +9,36 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            ContaCorrente conta = new ContaCorrente(846, 234567);
 
-            string url = "https://bytebank.com.br/cambio?moedaOrigen=Real&moedaDestino=Dolar&valor=1500";
-            string nomeArgumento = "valor";
+            var idades = new List<int>();
+            idades.Add(1);
+            idades.Add(5);
+            idades.Add(10);
 
-            ExtratorValorArgumentosUrl argumento = new ExtratorValorArgumentosUrl(url);
+            // ListExtensoes.AdicionarVarios(idades, 20, 25, 30);
+            idades.AdicionarVarios(2, 7, 30, 22); //Método de extensão
 
-            Console.WriteLine(argumento.Url);
+            idades.Sort(); // Ordena crescente
+            //idades.Reverse(); // Ordena do ultimo elemento para o primeiro
+            idades.Reverse();
 
-            Console.WriteLine("Valor do Argumento: " + argumento.GetValor(nomeArgumento));
+
+           foreach(int idade in idades)
+           {
+               Console.WriteLine(idade);
+           }
+
+
+            //ContaCorrente conta = new ContaCorrente(846, 234567);
+
+            //string url = "https://bytebank.com.br/cambio?moedaOrigen=Real&moedaDestino=Dolar&valor=1500";
+            //string nomeArgumento = "valor";
+
+            //ExtratorValorArgumentosUrl argumento = new ExtratorValorArgumentosUrl(url);
+
+            //Console.WriteLine(argumento.Url);
+
+            //Console.WriteLine("Valor do Argumento: " + argumento.GetValor(nomeArgumento));
 
             //Console.WriteLine(conta.Numero);
 

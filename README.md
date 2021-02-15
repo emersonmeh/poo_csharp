@@ -255,3 +255,36 @@
 
 	
 	*** List, Lambda e LINQ
+
+	MÉTODOS DE EXTENSÃO -> É possível extender Métodos do .NET/C# de forma a criar novos comportamentos para Classes já 
+	pré-estabelecidas, o método extendido NÃO faz parte da Classe pai, porém, atribui novas funcionalidades(comportamento) à Classe.
+	Para extender um método, é feito o uso da palavra reservada THIS antes do tipo(Classe) que está sendo extendido.
+
+		Ex.: public static void AdicionarVarios(this List<int> listaDeInteiros, params int[] itens){}
+
+
+	Métodos / Classes GENÉRICAS -> Para criação de métodos genéricos, o tipo <T> deve ser especificado na definição da Classe afim
+	de passar esse parametro genérico para os Métodos que ela contém.
+		Ex.: public static class Teste<T>
+		{
+			public static void Mensagem(T mensagem)
+			{
+				Console.WriteLine(mensagem);
+			}
+		}
+
+	Para MÉTODOS DE EXTENSÃO GENÉRICOS o tipo <T> NÃO DEVE ser passado na declaração da Classe e sim no método que será extendido.
+		Ex.: public static void Mensagem<T>(T mensagem)
+		{
+			Console.WriteLine(mensagem);
+		}
+
+	
+	No .NET/C# o uso de VAR para criação de váriáveis deve é possível desde que a variável seja inicializada, pois, por ser do tipo
+	implícito, é necessário que o compilador saiba qual o tipo do valor que será atribuido.
+		Ex.: var minhaLista = new List<int>();
+
+
+	Sort(); -> Ordena crescente;
+    Reverse(); -> Ordena do ultimo elemento para o primeiro (não segue ordem alfabética ou decrescente se os valores não tiverem
+	sido previamento ordenados);
