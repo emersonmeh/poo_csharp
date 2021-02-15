@@ -335,3 +335,32 @@
 	ORDERBY -> Uma forma mais simples de ordenação de lista utilizando LAMBDA. Varre uma lista e ordena os valores e retorna uma
 	nova lista do tipo IOrderedEnumerable<T>;
 		Ex.: var listaOrdenada = contas.OrderBy(x => x.Agencia);
+
+
+	*** Entrada e Saída (I/O) com streams
+
+	FILESTREAM() -> Classe do .NET/C# utilizada para leitura/gravação de arquivos em diversos formatos.
+		Ex.:
+			var enderecoDoArquivo = "contas.txt";
+            var fluxoDoArquivo = new FileStream(enderecoDoArquivo, FileMode.Open);
+
+			// Espaço para armazenamento dos bytes do arquivo que vai ser lido;
+            var buffer = new byte[1024]; // 1 kb
+
+	O buffer é criado para que seja possível lhe dar com arquivos maiores do que a memória do computador e também para que
+	o programa não seja sobrecarregado, pois, o buffer por ser reutilizado e o tamanho especificado vai sendo
+	substituido conforme o arquivo vendo sendo lido (Desde que seja percorrido e substituido por um laço While, por exemplo).
+
+	Para que os bytes sejam interpretados como texto é necessário um Codificador/Decodificador(Coder/Decoder) que faça
+	a transformação do bytes em Texto seja seguindo a tabela ASCII ou UTF-8, UTF-16, UTF-32, etc.
+	Para isso pode ser utilizada a Classe UTF8Encoding(), por exemplo, que é responsavél por fazer o papel de 
+	traduzir os bytes. A Classe UTF8Enconding herda da Classe ENCODING() que é uma Classe Abstrata.
+		Ex.:
+			// Decoding dos bytes em texto
+            var a = new UTF8Encoding();
+            var texto = a.GetString(buffer);
+	
+	Quando o arquivo é gerado, por exemplo, em uma máquina Windows e o programa que vai fazer o Decoding também roda em
+	uma máquina Windows, é possível utilizar uma propriedade estática da Classe ENCODING() para decodificar sem ter que
+	explicitamente informar qual o tipo de codificação que foi utilizado.
+		Ex.: var a = Encoding.Default;

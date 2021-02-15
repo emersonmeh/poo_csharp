@@ -1,0 +1,13 @@
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\bin\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.exe
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\bin\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.deps.json
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\bin\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.runtimeconfig.json
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\bin\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.runtimeconfig.dev.json
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\bin\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.dll
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\bin\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.pdb
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\obj\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.csprojAssemblyReference.cache
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\obj\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.AssemblyInfoInputs.cache
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\obj\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.AssemblyInfo.cs
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\obj\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.csproj.CoreCompileInputs.cache
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\obj\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.dll
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\obj\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.pdb
+C:\Users\emsantos\Desktop\POO C#\01\ByteBank\ByteBankImportacaoExportacao\obj\Debug\netcoreapp3.1\ByteBankImportacaoExportacao.genruntimeconfig.cache
