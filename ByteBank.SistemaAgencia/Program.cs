@@ -1,7 +1,9 @@
 ﻿using ByteBank.Modelos;
+using ByteBank.Modelos.Comparadores;
 using ByteBank.SistemaAgencia.Extensoes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -18,15 +20,27 @@ namespace ByteBank.SistemaAgencia
             // ListExtensoes.AdicionarVarios(idades, 20, 25, 30);
             idades.AdicionarVarios(2, 7, 30, 22); //Método de extensão
 
-            idades.Sort(); // Ordena crescente
-            //idades.Reverse(); // Ordena do ultimo elemento para o primeiro
-            idades.Reverse();
+            var contas = new List<ContaCorrente>() 
+            {
+                new ContaCorrente(354, 234551),
+                new ContaCorrente(354, 22341),
+                null,
+                new ContaCorrente(352, 265311),
+                new ContaCorrente(355, 998761),
+                new ContaCorrente(1, 998761)
 
+            };
 
-           foreach(int idade in idades)
-           {
-               Console.WriteLine(idade);
-           }
+            //contas.Sort(); //ordenada com base no método IComparable sobrescrito na Classe ContaCorrente;
+            //contas.Sort(new ComparadorContaCorrentePorAgencia());
+            var listaOrdenada = contas.Where(c => c != null).OrderBy(x => x.Agencia);
+
+            foreach(ContaCorrente c in listaOrdenada)
+            {
+                Console.WriteLine(c.Numero + ", " + c.Agencia);
+            }
+
+            Console.ReadLine();
 
 
             //ContaCorrente conta = new ContaCorrente(846, 234567);

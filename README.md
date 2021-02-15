@@ -287,4 +287,51 @@
 
 	Sort(); -> Ordena crescente;
     Reverse(); -> Ordena do ultimo elemento para o primeiro (não segue ordem alfabética ou decrescente se os valores não tiverem
-	sido previamento ordenados);
+	sido previamente ordenados);
+
+	IComparable -> Para fazer ordenação de conjuntos de objetos o simples uso do Sort() não vai funcionar, para isso é necessário um 
+	método (especifico da interface IComparable) de comparação para que seja possível essa ordenação. O método CompareTo() da interface
+	IComparable específica em seu contrato que deve ser recebido um object para comparação e deve retorna um INT.
+		Ex.:
+			public class ContaCorrente : IComparable 
+			{
+				public int CompareTo(object obj)
+				{
+					// Retorna negativo quando a instânca precede o obj;
+					// Retorna zero quando nossa instância e obj forem equivalentes;
+					// Retorna positivo diferente de zero quando a precedencia for de obj;
+
+					var outraConta = obj as ContaCorrente;
+
+					if(outraConta == null)
+					{
+						return -1;
+					}
+
+					if(Numero < outraConta.Numero)
+					{
+						return -1;
+					}
+
+					if(Numero == outraConta.Numero)
+					{
+						return 0;
+					}
+
+					return 1;
+				}
+			}
+			
+	IComparer<T> -> Para que seja possível ordenar um conjunto de objetos especificando um parametro específico, utiliza-se a 
+	interfae IComparer, que é utilizada como parametro do método Sort(Icomparer<T>) e possibilita escrever um método para essa 
+	ordenação, já que, o mesmo é genérico e recebe na implementação qual a Classe que vai ser utilizada.
+		Ex.:
+			public class ComparadorContaCorrentePorAgencia : IComparer<ContaCorrente>{}
+	Assim como na interface IComparable a interface ICompare<T> possui em seu contrato um método Compare() que deve retornar um int.
+
+	Para utilizar a Classe ComparadorContaCorrentePorAgencia em conjunto com o método Sort():
+		Ex.: contas.Sort(new ComparadorContaCorrentePorAgencia()); //utiliza uma instância da Classe criada passada como parametro para o Sort();
+	
+	ORDERBY -> Uma forma mais simples de ordenação de lista utilizando LAMBDA. Varre uma lista e ordena os valores e retorna uma
+	nova lista do tipo IOrderedEnumerable<T>;
+		Ex.: var listaOrdenada = contas.OrderBy(x => x.Agencia);
