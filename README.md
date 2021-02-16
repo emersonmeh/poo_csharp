@@ -410,3 +410,64 @@
                 }
             }
 
+	StreamWriter -> utilizado para criar arquivos em um caminho pré definido. Recebe um FileStream como primeiro parametro
+	contendo a informação de path e FileMode (Create(sobrescreve arquivos com o mesmo nome) ou CreateNew(se o arquivo tiver
+	o mesmo nome será lançada uma exceção.)).
+		Ex.:
+			using(var fluxoDeArquivo = new FileStream(caminhoNovoArquivo, FileMode.CreateNew))
+            using (var escritor = new StreamWriter(fluxoDeArquivo, Encoding.UTF8)) 
+            {
+                escritor.Write("456, 456765, 4756.89, Emerson Santos");
+            }
+	Obs.: A Classe FileStream possui um método Write, porém, é necessário lhe dar com a conversão de bytes, tamanho do
+	buffer e tipo de encoding.
+
+	Em tempo de execução, toda a escrita no arquivo só vai estar disponível após finalizar o processamento, pois, enquanto
+	o processo de gerar o arquivo esta em execução, os dados que serão gravados ficam armazenados em buffer de memória. Essa
+	abordagem é mais rápida, porém, caso um erro ocorra no momento da gravação, os dados em memória serão perdidos.
+	Para que os dados sejam gravados linha a linha no arquivo em tempo de execução, a Classe StreamWriter possui um método
+	chamado Flush(), que libera o buffer para o Stream assim que a leitura da linha é realizada.
+		Ex.:
+			using(var fluxoDeArquivo = new FileStream(caminhoNovoArquivo, FileMode.CreateNew))
+            using (var escritor = new StreamWriter(fluxoDeArquivo, Encoding.UTF8)) 
+            {
+                escritor.Write("456, 456765, 4756.89, Emerson Ferreira Santos");
+                escritor.Flush();
+            }
+
+	Quando não há necessidade que o arquivo gerado seja lido por um humano, é possível gerar arquivo com dados binários afim
+	de economizar espaço, processamento, memório e ganhar maior desempenho na escrita e leitura desse arquivo.
+	Para arquivos binários, tanto na escrita quanto na leitura do arquivo, existem as Classes BinaryWriter() e 
+	BinaryReader().
+	Para LEITURA do arquivo binário, os dados devem ser decodificados na ordem que foram gerados, caso o contrario, haverá
+	um problema de decoding.
+		Ex.: 
+			// escrita 
+				using(var escritor = new BinaryWriter(fs))
+				{
+					escritor.Write(1234);
+					escritor.Write("teste");
+				}
+
+			// leitura
+				using(var leitor = new BinaryReader(fs))
+				{
+					var inteiro = leitor.ReadInt32();
+					var texto = leitor.ReadString();
+				}
+
+
+	CLASSE FILE -> forma mais fácil de leitura de arquivos, porém, deve tomar cuidado com seu uso, pois, o arquivo é lido
+	completamente de uma vez, sem nenhum tipo de controle de buffer ou memória, sendo assim, caso seja feita a leitura de um
+	arquivo muito grande, o uso do File pode deteriorar muito o desempenho do sistema ou causar estouro de memória.
+		Ex.:
+			var linhas = File.ReadAllLines("contas.txt");
+			
+			foreach (var linha in linhas)
+			{
+				Console.WriteLine(linha);
+			}
+
+	Além de leitura, a Classe File possui também métodos para escrita de arquivos.
+		Ex.: File.WriteAllText("nome_arquivo.txt", "texto no arquivo");
+
