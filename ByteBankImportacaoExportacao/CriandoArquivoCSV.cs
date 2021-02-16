@@ -30,6 +30,7 @@ namespace ByteBankImportacaoExportacao
             using (var escritor = new StreamWriter(fluxoDeArquivo, Encoding.UTF8)) 
             {
                 escritor.Write("456, 456765, 4756.89, Emerson Ferreira Santos");
+                escritor.Flush();
             }
         }
     }
